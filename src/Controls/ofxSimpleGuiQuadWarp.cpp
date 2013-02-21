@@ -7,7 +7,7 @@
 ofxSimpleGuiQuadWarp::ofxSimpleGuiQuadWarp(string name, ofBaseDraws &baseDraw, ofPoint *pts) : ofxSimpleGuiControl(name) {
 	this->baseDraw = &baseDraw;
 	
-	setPos(0, 0);
+	setPosition(0, 0);
 	setSize(baseDraw.getWidth(), baseDraw.getHeight());
 	
 	curPoint	= NULL;
@@ -95,7 +95,7 @@ void ofxSimpleGuiQuadWarp::onDragOutside(int x, int y, int button) {
 
 //---------------------------------------------------------------------
 void ofxSimpleGuiQuadWarp::draw(float x, float y) {
-	setPos(x, y);
+	setPosition(x, y);
 	glPushMatrix();
 	glTranslatef(x, y, 0);
 	glColor3f(1, 1, 1);

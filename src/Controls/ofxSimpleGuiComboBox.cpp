@@ -212,7 +212,7 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 	//we assume a max of 256 characters.
 	char choiceBuf[256];
 	
-	setPos(x, y);
+	setPosition(x, y);
 	
 	glPushMatrix();
 	glTranslatef(x, y, 0);
@@ -225,7 +225,7 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 	setTextColor();
 //	sprintf(choiceBuf, "%s: %s", m_title, m_choices.size() ? m_choices[m_selectedChoice] : "(No Choices Available)");
 	
-	ofDrawBitmapString(m_title + "\n\n" + (m_choices.size() ? m_choices[m_selectedChoice] : "N/A"), kSGCBTextPaddingX, kSGCBTextPaddingY);
+	ofDrawBitmapString(m_title + "\n" + (m_choices.size() ? m_choices[m_selectedChoice] : "N/A"), kSGCBTextPaddingX, kSGCBTextPaddingY);
 	//draw a combobox down triangle icon so the users know to click
 	ofTriangle(width - (kSGCBTriangleWidth + KSGCBTrianglePadding), kSGCBTextPaddingY/2,
 			   width - (KSGCBTrianglePadding), kSGCBTextPaddingY/2,

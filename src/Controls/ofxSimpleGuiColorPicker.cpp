@@ -103,7 +103,7 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 //	enabled = true;
 	
 	//update postion of gui object
-	setPos(x, y);
+	setPosition(x, y);
 	glPushMatrix();
 	glTranslatef(x, y, 0);
 	

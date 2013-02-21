@@ -73,7 +73,7 @@ void ofxSimpleGuiToggle::update() {
 
 void ofxSimpleGuiToggle::draw(float x, float y) {
 //	enabled = true;
-	setPos(x, y);
+	setPosition(x, y);
 	
 	glPushMatrix();
 	glTranslatef(x, y, 0);

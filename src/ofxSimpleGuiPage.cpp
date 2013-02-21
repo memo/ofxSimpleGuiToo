@@ -67,7 +67,7 @@ float ofxSimpleGuiPage::getNextY(float y) {
 
 
 void ofxSimpleGuiPage::draw(float x, float y, bool alignRight) {
-	setPos(x += config->offset.x, y += config->offset.y);
+	setPosition(x += config->offset.x, y += config->offset.y);
 	if(alignRight) x = ofGetWidth() - x -  config->gridSize.x;
 	
 	float posX		= 0;

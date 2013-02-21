@@ -60,7 +60,7 @@ void ofxSimpleGuiButton::onRelease(int x, int y, int button) {
 }
 
 void ofxSimpleGuiButton::draw(float x, float y) {
-	setPos(x, y);
+	setPosition(x, y);
 	
 	glPushMatrix();
 	glTranslatef(x, y, 0);
