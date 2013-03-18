@@ -27,8 +27,8 @@ void ofxSimpleGuiQuadWarp::setup() {
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiQuadWarp::loadFromXML(ofxXmlSettings &XML) {
 	for(int i=0; i<4; i++) {
-		pts[i].x = XML.getValue(controlType + "_" + key + ":values_" + ofToString(i) + "_x", 0.0f);
-		pts[i].y = XML.getValue(controlType + "_" + key + ":values_" + ofToString(i) + "_y", 0.0f);
+		pts[i].x = XML.getValue(controlType + "_" + key + ":values_" + ofToString(i) + "_x", pts[i].x);
+		pts[i].y = XML.getValue(controlType + "_" + key + ":values_" + ofToString(i) + "_y", pts[i].y);
 	}
 }
 

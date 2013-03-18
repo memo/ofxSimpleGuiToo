@@ -15,7 +15,7 @@ void ofxSimpleGuiButton::setup() {
 
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiButton::loadFromXML(ofxXmlSettings &XML) {
-	setValue(XML.getValue(controlType + "_" + key + ":value", 0));
+	setValue(XML.getValue(controlType + "_" + key + ":value", getValue()));
 }
 
 void ofxSimpleGuiButton::saveToXML(ofxXmlSettings &XML) {

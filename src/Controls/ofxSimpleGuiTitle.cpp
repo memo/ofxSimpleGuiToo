@@ -21,7 +21,7 @@ void ofxSimpleGuiTitle::setup() {
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiTitle::loadFromXML(ofxXmlSettings &XML) {
 	if(!value) return;
-	setValue(XML.getValue(controlType + "_" + key + ":value", 0));
+	setValue(XML.getValue(controlType + "_" + key + ":value", getValue()));
 }
 
 void ofxSimpleGuiTitle::saveToXML(ofxXmlSettings &XML) {

@@ -87,7 +87,7 @@ void ofxSimpleGuiComboBox::setup() {
 
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiComboBox::loadFromXML(ofxXmlSettings &XML) {
-	setValue(XML.getValue(controlType + "_" + key + ":value", 0));
+	setValue(XML.getValue(controlType + "_" + key + ":value", getValue()));
 }
 
 void ofxSimpleGuiComboBox::saveToXML(ofxXmlSettings &XML) {

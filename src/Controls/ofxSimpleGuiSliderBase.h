@@ -50,7 +50,7 @@ public:
 
 #ifndef OFXMSAGUI_DONT_USE_XML
 	void loadFromXML(ofxXmlSettings &XML) {
-		setValue((Type)XML.getValue(controlType + "_" + key + ":value", 0.0f));
+		setValue((Type)XML.getValue(controlType + "_" + key + ":value", getValue()));
 	}
     
 	void saveToXML(ofxXmlSettings &XML) {

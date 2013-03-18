@@ -18,7 +18,7 @@ void ofxSimpleGuiSlider2d::setup() {
 
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiSlider2d::loadFromXML(ofxXmlSettings &XML) {
-	value->set(XML.getValue(controlType + "_" + key + ":valueX", 0.0f), XML.getValue(controlType + "_" + key + ":valueY", 0.0f));
+	value->set(XML.getValue(controlType + "_" + key + ":valueX", value->x), XML.getValue(controlType + "_" + key + ":valueY", value->y));
 }
 
 
