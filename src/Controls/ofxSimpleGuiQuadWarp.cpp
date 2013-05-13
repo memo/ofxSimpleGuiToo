@@ -8,7 +8,7 @@ ofxSimpleGuiQuadWarp::ofxSimpleGuiQuadWarp(string name, ofBaseDraws &baseDraw, o
 	this->baseDraw = &baseDraw;
 	
 	setPosition(0, 0);
-	setSize(baseDraw.getWidth(), baseDraw.getHeight());
+//	setSize(baseDraw.getWidth(), baseDraw.getHeight()); 
 	
 	curPoint	= NULL;
 	this->pts = pts;
