@@ -29,7 +29,7 @@ void ofxSimpleGuiColorPicker::setup() {
 #ifndef OFXMSAGUI_DONT_USE_XML
 void ofxSimpleGuiColorPicker::loadFromXML(ofxXmlSettings &XML) {
 	for(int i=0; i<4; i++) {
-		setValue(XML.getValue(controlType + "_" + key + ":values_" + ofToString(i), 0.0f), i);
+		setValue(XML.getValue(controlType + "_" + key + ":values_" + ofToString(i), getValue(i)), i);
 	}
 }
 
