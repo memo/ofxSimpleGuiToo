@@ -8,7 +8,7 @@
  */
 
 #include "ofxSimpleGuiComboBox.h"
-#include "ofxSimpleGuiPage.h"
+#include "../ofxSimpleGuiPage.h"
 
 #define kMaxChoiceStringLen 150
 #define kMaxNameStringLen 100

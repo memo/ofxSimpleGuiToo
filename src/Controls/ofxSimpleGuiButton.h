@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ofxSimpleGuiValueControl.h"
+#include "../ofxSimpleGuiValueControl.h"
 
 
 class ofxSimpleGuiButton : public ofxSimpleGuiValueControl<bool> {

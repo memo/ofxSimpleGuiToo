@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ofxSimpleGuiControl.h"
+#include "../ofxSimpleGuiControl.h"
 
 
 class ofxSimpleGuiColorPicker : public ofxSimpleGuiControl {
