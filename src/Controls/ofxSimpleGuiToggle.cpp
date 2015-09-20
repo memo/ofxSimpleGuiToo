@@ -81,16 +81,16 @@ void ofxSimpleGuiToggle::draw(float x, float y) {
 	ofEnableAlphaBlending();
 	ofFill();
 	setFullColor(*value);
-	ofRect(0, 0, height, height);
+	ofDrawRectangle(0, 0, height, height);
 	
 	if((*value)) {
 		setTextColor();
-		ofLine(0, 0, height, height);
-		ofLine(height, 0, 0, height);
+		ofDrawLine(0, 0, height, height);
+		ofDrawLine(height, 0, 0, height);
 	}
 	
 	setTextBGColor();
-	ofRect(height, 0, width - height, height);
+	ofDrawRectangle(height, 0, width - height, height);
 	
 	setTextColor();
 	ofDrawBitmapString(name, height + 15, 15);

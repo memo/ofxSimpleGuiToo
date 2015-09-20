@@ -68,7 +68,7 @@ void ofxSimpleGuiButton::draw(float x, float y) {
 	ofEnableAlphaBlending();
 	ofFill();
 	setTextBGColor();
-	ofRect(0, 0, width, height);
+	ofDrawRectangle(0, 0, width, height);
 	
 	// if a toggle
 	if((*value) && beToggle) {

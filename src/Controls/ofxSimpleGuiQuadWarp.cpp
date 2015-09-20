@@ -107,10 +107,10 @@ void ofxSimpleGuiQuadWarp::draw(float x, float y) {
 	for(int i=0; i<4; i++) {
 		if(curPoint == &pts[i]) {
 			ofSetColor(255, 0, 0);
-			ofCircle(pts[i].x, pts[i].y, 4);
+			ofDrawCircle(pts[i].x, pts[i].y, 4);
 		} else {
 			ofSetColor(0, 255, 0);
-			ofCircle(pts[i].x, pts[i].y, 2);
+			ofDrawCircle(pts[i].x, pts[i].y, 2);
 		}
 			
 	}

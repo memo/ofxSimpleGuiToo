@@ -20,7 +20,7 @@ void ofxSimpleGuiFPSCounter::draw(float x, float y) {
 	ofEnableAlphaBlending();
 	ofFill();
 	setTextBGColor(false);
-	ofRect(0, 0, width, height);
+	ofDrawRectangle(0, 0, width, height);
 	
 	setTextColor(false);
 	ofDrawBitmapString("FPS: " + ofToString(ofGetFrameRate()), 3, 15);

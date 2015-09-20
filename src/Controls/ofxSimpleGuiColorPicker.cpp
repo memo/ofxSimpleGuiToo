@@ -117,7 +117,7 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 		ofEnableAlphaBlending();
 		ofFill();
 		setEmptyColor();
-		ofRect(0, startY, width, config->sliderHeight*1.8);
+		ofDrawRectangle(0, startY, width, config->sliderHeight*1.8);
 		
 	
 		switch(i) {
@@ -127,7 +127,7 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 			case 3:glColor3f(getValue(i), getValue(i), getValue(i)); break;
 		}
 		
-		ofRect(0, startY, barwidth[i], config->sliderHeight * 1.8);
+		ofDrawRectangle(0, startY, barwidth[i], config->sliderHeight * 1.8);
 		
 		int iover = (getMouseY() - y) / config->sliderHeight/2;
 		bool isOver = iover == i;
@@ -145,11 +145,11 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 	ofFill();
 	
 	setTextBGColor();
-	ofRect(0, startY, width, config->sliderTextHeight);
+	ofDrawRectangle(0, startY, width, config->sliderTextHeight);
 
 	glColor3f(getValue(0), getValue(1), getValue(2));
 //	ofRect(0, startY+config->sliderTextHeight, width, config->sliderTextHeight * 1.5);
-	ofRect(150, startY + 3, width - 150 -3, config->sliderTextHeight - 8);
+	ofDrawRectangle(150, startY + 3, width - 150 -3, config->sliderTextHeight - 8);
 	
 	setTextColor();
 	string s = name;

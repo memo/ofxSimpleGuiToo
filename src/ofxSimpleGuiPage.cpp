@@ -102,7 +102,7 @@ void ofxSimpleGuiPage::draw(float x, float y, bool alignRight) {
 			ofNoFill();
 			ofSetHexColor(config->borderColor);
 			glLineWidth(0.5f);
-			ofRect(controlX, controlY, control.width, control.height);
+			ofDrawRectangle(controlX, controlY, control.width, control.height);
 		}
 		posY = getNextY(posY + control.height + config->padding.y);
 		
@@ -122,7 +122,7 @@ void ofxSimpleGuiPage::draw(float x, float y, bool alignRight) {
 			ofNoFill();
 			ofSetHexColor(config->borderColor);
 			glLineWidth(0.5f);
-			ofRect(stealingX, stealingY, eventStealingControl->width, eventStealingControl->height);
+			ofDrawRectangle(stealingX, stealingY, eventStealingControl->width, eventStealingControl->height);
 		}
 	}
 }

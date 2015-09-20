@@ -27,14 +27,14 @@ void ofxSimpleGuiContent::draw(float x, float y) {
 	ofEnableAlphaBlending();
 	ofFill();
 	glColor4f(0, 0, 0, 0.8f);
-	ofRect(0, 0, width, fixheight);
+	ofDrawRectangle(0, 0, width, fixheight);
 	
 	ofSetHexColor(0xffffff);
 	content->draw(0, 0, width, fixheight);
 	
 	ofFill();
 	setTextBGColor();
-	ofRect(0, fixheight, width, config->sliderTextHeight);
+	ofDrawRectangle(0, fixheight, width, config->sliderTextHeight);
 	
 	setTextColor();
 	ofDrawBitmapString(name, 3, fixheight + 15);

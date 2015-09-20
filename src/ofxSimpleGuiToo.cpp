@@ -141,7 +141,7 @@ void ofxSimpleGuiToo::drawFocus(float x, float y) {
 	glTranslatef(x, y, 0);
 	ofFill();
 //	ofSetHexColor(config->focusColor.r, config->focusColor.g, config->focusColor.b, 200);
-	ofRect(0, 0, 10, 10);
+	ofDrawRectangle(0, 0, 10, 10);
 	glPopMatrix();
 }
 
@@ -159,8 +159,8 @@ void ofxSimpleGuiToo::draw() {
 
 	headerPage->draw(0, 0, alignRight);		// this is the header
 	ofSetHexColor(config->borderColor);
-	if(alignRight) ofLine(ofGetWidth() - headerPage->width, headerPage->height, headerPage->width, headerPage->height);
-	else ofLine(0, headerPage->height, headerPage->width, headerPage->height);
+	if(alignRight) ofDrawLine(ofGetWidth() - headerPage->width, headerPage->height, headerPage->width, headerPage->height);
+	else ofDrawLine(0, headerPage->height, headerPage->width, headerPage->height);
 	pages[currentPageIndex]->draw(0.0f, headerPage->height, alignRight);
 	
 	ofPopStyle();

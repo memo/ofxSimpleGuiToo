@@ -184,14 +184,14 @@ public:
 		ofFill();
 
 		setEmptyColor();
-		ofRect(0, 0, width, config->sliderHeight);
+		ofDrawRectangle(0, 0, width, config->sliderHeight);
 
 
 		setFullColor();
-		ofRect(0, 0, barwidth, config->sliderHeight);
+		ofDrawRectangle(0, 0, barwidth, config->sliderHeight);
 
 		setTextBGColor();
-		ofRect(0, config->sliderHeight, width, config->sliderTextHeight);
+		ofDrawRectangle(0, config->sliderHeight, width, config->sliderTextHeight);
 
 		setTextColor();
 		string s = name + ": " + ofToString((*value));

@@ -220,22 +220,22 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 	ofEnableAlphaBlending();
 	ofFill();
 	setTextBGColor();
-	ofRect(0, 0, width, height);
+	ofDrawRectangle(0, 0, width, height);
 	
 	setTextColor();
 //	sprintf(choiceBuf, "%s: %s", m_title, m_choices.size() ? m_choices[m_selectedChoice] : "(No Choices Available)");
 	
 	ofDrawBitmapString(m_title + "\n" + (m_choices.size() ? m_choices[m_selectedChoice] : "N/A"), kSGCBTextPaddingX, kSGCBTextPaddingY);
 	//draw a combobox down triangle icon so the users know to click
-	ofTriangle(width - (kSGCBTriangleWidth + KSGCBTrianglePadding), kSGCBTextPaddingY/2,
+	ofDrawTriangle(width - (kSGCBTriangleWidth + KSGCBTrianglePadding), kSGCBTextPaddingY/2,
 			   width - (KSGCBTrianglePadding), kSGCBTextPaddingY/2,
 			   width - (kSGCBTriangleWidth/2 + KSGCBTrianglePadding), kSGCBTextPaddingY);
 	
 	if(m_hasFocus) {
 		setCBTextBGColor();
-		ofRect(0, height, width, config->comboBoxTextHeight * m_choices.size());
+		ofDrawRectangle(0, height, width, config->comboBoxTextHeight * m_choices.size());
 		setTextColor();
-		ofLine(0, config->comboBoxHeight-1, width, config->comboBoxHeight-1);
+		ofDrawLine(0, config->comboBoxHeight-1, width, config->comboBoxHeight-1);
 		
 		for(int i=0; i < m_choices.size(); i++) {
 			setCBTextColor();
@@ -243,7 +243,7 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 			float curY = height + i*config->comboBoxTextHeight; 
 			if(i==m_mouseChoice){
 				//draw a text colored rect so we can see the inverse
-				ofRect(0, curY, width, config->comboBoxTextHeight);
+				ofDrawRectangle(0, curY, width, config->comboBoxTextHeight);
 				setCBTextBGColor();
 			}
 			
