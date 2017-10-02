@@ -18,7 +18,7 @@ ofxSimpleGuiControl(name),
 m_selectedChoice(choice_out),
 m_page(owner)
 {
-	m_selectedChoice = m_mouseChoice = 0;
+	m_mouseChoice = 0;
 	if(numChoices <=1)
 		numChoices = 1;
 	m_hasFocus=false;
@@ -28,6 +28,7 @@ m_page(owner)
 		addChoice(choiceTitles ? choiceTitles[i] : ofToString(i));
 	}
 	controlType = "ComboBox";
+    setValue(m_selectedChoice);
 	setup();
 }
 
@@ -214,8 +215,8 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 	
 	setPosition(x, y);
 	
-	glPushMatrix();
-	glTranslatef(x, y, 0);
+	ofPushMatrix();
+	ofTranslate(x, y, 0);
 	
 	ofEnableAlphaBlending();
 	ofFill();
@@ -252,5 +253,5 @@ void ofxSimpleGuiComboBox::draw(float x, float y) {
 	}
 	ofDisableAlphaBlending();
 	
-	glPopMatrix();
+	ofPopMatrix();
 }

@@ -179,8 +179,8 @@ public:
 		else if(barwidth < 0) barwidth = 0;
 
 		ofEnableAlphaBlending();
-		glPushMatrix();
-		glTranslatef(x, y, 0);
+		ofPushMatrix();
+		ofTranslate(x, y, 0);
 		ofFill();
 
 		setEmptyColor();
@@ -197,7 +197,7 @@ public:
 		string s = name + ": " + ofToString((*value));
 		ofDrawBitmapString(s, 3, config->sliderHeight + 14);
 		ofDisableAlphaBlending();
-		glPopMatrix();
+		ofPopMatrix();
 	}
 
 

@@ -98,7 +98,7 @@ public:
 	//	ofxSimpleGuiMovieSlider		&addMovieSlider(string name, ofVideoPlayer& input);
 	ofxSimpleGuiQuadWarp		&addQuadWarper(string name, ofBaseDraws &baseDraw, ofPoint *pts);
 	ofxSimpleGuiSliderInt		&addSlider(string name, int &value, int min, int max);
-	ofxSimpleGuiSliderFloat		&addSlider(string name, float &value, float min, float max);
+	ofxSimpleGuiSliderFloat		&addSlider(string name, float &value, float min = 0.f, float max = 1.f);
 	ofxSimpleGuiSlider2d		&addSlider2d(string name, ofPoint& value, float xmin, float xmax, float ymin, float ymax);
 	ofxSimpleGuiTitle			&addTitle(string name="", float height = 0);
 	ofxSimpleGuiToggle			&addToggle(string name, bool &value);
@@ -108,6 +108,8 @@ public:
 	
 	
 	void						draw();
+    
+    int                                currentPageIndex;            // 1 based index of page (0 is for global controls)
 	
 protected:
 	bool							doAutoSave;
@@ -116,7 +118,6 @@ protected:
 	bool							doSave;//, doSaveBackup;
 	bool							changePage;
 	int								forceHeight;
-	int								currentPageIndex;			// 1 based index of page (0 is for global controls)
 	
 	bool							doDraw;
 	float							border;

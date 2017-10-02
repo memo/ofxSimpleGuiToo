@@ -104,8 +104,8 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 	
 	//update postion of gui object
 	setPosition(x, y);
-	glPushMatrix();
-	glTranslatef(x, y, 0);
+	ofPushMatrix();
+	ofTranslate(x, y, 0);
 	
 	int startY = 0;
 	for(int i=0; i<4; i++) {
@@ -155,5 +155,5 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 	string s = name;
 	ofDrawBitmapString(s, 3, startY + 14);
 	ofDisableAlphaBlending();
-	glPopMatrix();
+	ofPopMatrix();
 }

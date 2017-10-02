@@ -1,6 +1,6 @@
 #pragma once
 
-#include "msalibs/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h"
+#include "ofxMSAInteractiveObject.h"
 #include "ofxSimpleGuiConfig.h"
 
 #ifndef OFXMSAGUI_DONT_USE_XML

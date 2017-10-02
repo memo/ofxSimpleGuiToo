@@ -62,8 +62,8 @@ void ofxSimpleGuiButton::onRelease(int x, int y, int button) {
 void ofxSimpleGuiButton::draw(float x, float y) {
 	setPosition(x, y);
 	
-	glPushMatrix();
-	glTranslatef(x, y, 0);
+	ofPushMatrix();
+	ofTranslate(x, y, 0);
 	
 	ofEnableAlphaBlending();
 	ofFill();
@@ -82,5 +82,5 @@ void ofxSimpleGuiButton::draw(float x, float y) {
 	
 	ofDisableAlphaBlending();
 	
-	glPopMatrix();
+	ofPopMatrix();
 }
