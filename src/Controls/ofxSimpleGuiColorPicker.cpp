@@ -121,10 +121,10 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 		
 	
 		switch(i) {
-			case 0:glColor3f(getValue(i), 0, 0); break;
-			case 1:glColor3f(0, getValue(i), 0); break;
-			case 2:glColor3f(0, 0, getValue(i)); break;
-			case 3:glColor3f(getValue(i), getValue(i), getValue(i)); break;
+			case 0:ofSetColor(ofFloatColor(getValue(i), 0, 0)); break;
+			case 1:ofSetColor(ofFloatColor(0, getValue(i), 0)); break;
+			case 2:ofSetColor(ofFloatColor(0, 0, getValue(i))); break;
+			case 3:ofSetColor(ofFloatColor(getValue(i), getValue(i), getValue(i))); break;
 		}
 		
 		ofDrawRectangle(0, startY, barwidth[i], config->sliderHeight * 1.8);
@@ -132,9 +132,9 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 		int iover = (getMouseY() - y) / config->sliderHeight/2;
 		bool isOver = iover == i;
 		if(isOver) {
-			glColor3f(1, 1, 1);
+			ofSetColor(ofFloatColor(1, 1, 1));
 		} else {
-			glColor3f(0.5, 0.5, 0.5);
+			ofSetColor(ofFloatColor(0.5, 0.5, 0.5));
 		}
 		
 		ofDrawBitmapString(ofToString(getValue(i), 4), 3, startY + 14);
@@ -147,7 +147,7 @@ void ofxSimpleGuiColorPicker::draw(float x, float y) {
 	setTextBGColor();
 	ofDrawRectangle(0, startY, width, config->sliderTextHeight);
 
-	glColor3f(getValue(0), getValue(1), getValue(2));
+	ofSetColor(ofFloatColor(getValue(0), getValue(1), getValue(2)));
 //	ofRect(0, startY+config->sliderTextHeight, width, config->sliderTextHeight * 1.5);
 	ofDrawRectangle(150, startY + 3, width - 150 -3, config->sliderTextHeight - 8);
 	
