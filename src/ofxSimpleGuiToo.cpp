@@ -13,6 +13,7 @@ void ofxSimpleGuiToo::setup() {
 	config			= &defaultSimpleGuiConfig;
 
 	doSave			= false;
+    savePreset      = false;
 	changePage		= false;
 	titleButton		= NULL;
 
@@ -22,6 +23,8 @@ void ofxSimpleGuiToo::setup() {
 	titleButton = &headerPage->addButton("title", changePage);
 	headerPage->addToggle("Auto Save", doAutoSave);
 	headerPage->addButton("Save Settings", doSave);
+    headerPage->addButton("Save Preset", savePreset);
+    headerPage->addButton("Load Preset", loadPreset);
 	headerPage->addFPSCounter();
 
 	addPage();
@@ -105,22 +108,22 @@ void ofxSimpleGuiToo::setAutoSave(bool b) {
 }
 
 
-void ofxSimpleGuiToo::loadFromXML() {
+void ofxSimpleGuiToo::loadFromXML(string path) {
 	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiToo::loadFromXML");// + file);
 
 	for(int i=1; i < pages.size(); i++) {
-		pages[i]->loadFromXML();
+		pages[i]->loadFromXML(path);
 	}
 
 	setPage(1);
 }
 
 
-void ofxSimpleGuiToo::saveToXML() {
+void ofxSimpleGuiToo::saveToXML(string path) {
 	doSave = false;
 
 	for(int i=1; i < pages.size(); i++) {
-		pages[i]->saveToXML();
+		pages[i]->saveToXML(path);
 	}
 
 	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiToo::saveToXML");
@@ -340,6 +343,27 @@ void ofxSimpleGuiToo::update(ofEventArgs &e) {
 //	if(doSaveBackup) doSave = true;
 
 	if(doSave) saveToXML();
+    
+    if(savePreset) {
+        savePreset = false;
+        ofFileDialogResult saveResult = ofSystemSaveDialog("my-preset", "Save preset");
+        if (saveResult.bSuccess) {
+            ofDisableDataPath();
+            ofDirectory::createDirectory(saveResult.getPath(), false);
+            saveToXML(saveResult.getPath() + "/");
+            ofEnableDataPath();
+        }
+    }
+    
+    if(loadPreset) {
+        loadPreset = false;
+        ofFileDialogResult loadResult = ofSystemLoadDialog("Load preset", true);
+        if (loadResult.bSuccess) {
+            ofDisableDataPath();
+            loadFromXML(loadResult.getPath() + "/");
+            ofEnableDataPath();
+        }
+    }
 }
 //void ofxSimpleGuiToo::draw(ofEventArgs &e) {
 //void ofxSimpleGuiToo::exit(ofEventArgs &e) {
