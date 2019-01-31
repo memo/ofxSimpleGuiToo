@@ -142,7 +142,7 @@ void testApp::update(){
 	vidGrabber.update();
 	if(vidGrabber.isFrameNew()){
 		int totalPixels = vidGrabber.getWidth() * vidGrabber.getHeight() * 3;
-		unsigned char * pixels = vidGrabber.getPixels();
+        unsigned char * pixels = vidGrabber.getPixels().getData();
 		for(int i = 0; i < totalPixels; i++) videoInverted[i] = 255 - pixels[i];
 		videoTexture.loadData(videoInverted, vidGrabber.getWidth(), vidGrabber.getHeight(), GL_RGB);
 	}
