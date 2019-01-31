@@ -367,14 +367,15 @@ void ofxSimpleGuiToo::mouseReleased(ofMouseEventArgs &e) {
 }
 
 void ofxSimpleGuiToo::keyPressed(ofKeyEventArgs &e) {
-	if(doDefaultKeys) {
-		if(e.key == ' ') {
+    if(doDefaultKeys && e.hasModifier(OF_KEY_CONTROL) && e.hasModifier(OF_KEY_ALT)) {
+        int key = e.keycode;
+		if(key == ' ') {
 			toggleDraw();
-		} else if(e.key>='0' && e.key<='9') {
-			setPage((int)(e.key - '0'));
+		} else if(key>='0' && key<='9') {
+			setPage((int)(key - '0'));
 			setDraw(true);
 		} else if(doDraw) {
-			switch(e.key) {
+			switch(key) {
 				case '[': prevPage(); break;
 				case ']': nextPage(); break;
 			}
