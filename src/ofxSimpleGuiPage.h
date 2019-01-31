@@ -10,8 +10,8 @@ public:
 	void						draw(float x, float y, bool alignRight);
 	
 	ofxSimpleGuiPage&			setXMLName(string xmlFilename);
-	void						loadFromXML();
-	void						saveToXML();	
+	void						loadFromXML(string xmlFilepath = "");
+    void                        saveToXML(string xmlFilepath = "");
 	
 	
 	ofxSimpleGuiControl			&addControl(ofxSimpleGuiControl& control);

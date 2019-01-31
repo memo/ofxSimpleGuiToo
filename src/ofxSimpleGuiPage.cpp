@@ -19,14 +19,15 @@ ofxSimpleGuiPage &ofxSimpleGuiPage::setXMLName(string s) {
 }
 
 
-void ofxSimpleGuiPage::loadFromXML() {
-	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiPage::loadFromXML: " + xmlFilename);
+void ofxSimpleGuiPage::loadFromXML(string xmlFilepath) {
+    string fullPath = xmlFilepath + xmlFilename;
+	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiPage::loadFromXML: " + fullPath);
 #ifndef OFXMSAGUI_DONT_USE_XML
 	
 	if(xmlFilename.compare("") == 0) return;
 
-	if(XML.loadFile(xmlFilename) == false) {
-		ofLog(OF_LOG_ERROR, "Error loading xmlFilename: " + xmlFilename);
+	if(XML.loadFile(fullPath) == false) {
+		ofLog(OF_LOG_ERROR, "Error loading xmlFilename: " + fullPath);
 		return;
 	}
 	
@@ -38,8 +39,7 @@ void ofxSimpleGuiPage::loadFromXML() {
 #endif    
 }
 
-
-void ofxSimpleGuiPage::saveToXML() {
+void ofxSimpleGuiPage::saveToXML(string xmlFilepath) {
 	if(controls.size() <= 1 || xmlFilename.compare("") == 0) return;	// if it has no controls (title counts as one control)
 	
 #ifndef OFXMSAGUI_DONT_USE_XML
@@ -52,9 +52,10 @@ void ofxSimpleGuiPage::saveToXML() {
 	}
 	XML.popTag();
 	
-	XML.saveFile(xmlFilename);
+    string fullPath = xmlFilepath + xmlFilename;
+	XML.saveFile(fullPath);
 	//	if(doSaveBackup) 
-	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiPage::saveToXML: " + xmlFilename + " " + ofToString(controls.size(), 0) + " items");
+	ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiPage::saveToXML: " + fullPath + " " + ofToString(controls.size(), 0) + " items");
 #endif    
 }
 
