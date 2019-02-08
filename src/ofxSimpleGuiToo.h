@@ -110,17 +110,18 @@ public:
 	void						draw();
 	
 protected:
-	bool							doAutoSave;
-	bool							alignRight;
-	bool							doDefaultKeys;
-	bool							doSave;//, doSaveBackup;
-    bool                            savePreset;
-    bool                            loadPreset;
-	bool							changePage;
-	int								forceHeight;
-    int                             currentPageIndex;            // 1 based index of page (0 is for global controls)
+	bool							doAutoSave = true;
+	bool							alignRight = false;
+	bool							doDefaultKeys = false;
+	bool							doSave = false;//, doSaveBackup;
+    bool                            savePreset = false;
+    bool                            loadPreset = false;
+	bool							doNextPage = false;
+	bool							doPrevPage = false;
+	int								forceHeight = false;
+    int                             currentPageIndex = 0;            // 1 based index of page (0 is for global controls)
 	
-	bool							doDraw;
+	bool							doDraw = true;
 	float							border;
 	
 	ofxSimpleGuiPage				*headerPage;

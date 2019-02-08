@@ -12,16 +12,15 @@ ofxSimpleGuiToo::ofxSimpleGuiToo() {
 void ofxSimpleGuiToo::setup() {
     config			= &defaultSimpleGuiConfig;
 
-    doSave			= false;
-    savePreset      = false;
-    changePage		= false;
     titleButton		= NULL;
 
     headerPage		= &addPage("Header");
     headerPage->height = config->buttonHeight * 2;
     headerPage->width = 0;
-    titleButton = &headerPage->addButton("title", changePage);
-    headerPage->addToggle("Auto Save", doAutoSave);
+    titleButton = &headerPage->addButton("title", doNextPage);
+	headerPage->addButton("<", doPrevPage);
+	//headerPage->addButton(">", doNextPage);
+	headerPage->addToggle("Auto Save", doAutoSave);
     headerPage->addButton("Save Settings", doSave);
     headerPage->addButton("Save Preset", savePreset);
     headerPage->addButton("Load Preset", loadPreset);
@@ -329,9 +328,14 @@ ofxSimpleGuiComboBox &ofxSimpleGuiToo::addComboBox(string name, int &value, vect
 
 //void ofxSimpleGuiToo::setup(ofEventArgs &e) {
 void ofxSimpleGuiToo::update(ofEventArgs &e) {
-    if(changePage) {
-        nextPage();
-        changePage = false;
+	if (doPrevPage) {
+		doPrevPage = false;
+		prevPage();
+	}
+	
+	if(doNextPage) {
+		doNextPage = false;
+		nextPage();
     }
 
     headerPage->update(e);
