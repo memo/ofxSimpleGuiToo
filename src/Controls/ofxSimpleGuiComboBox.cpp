@@ -127,7 +127,7 @@ void ofxSimpleGuiComboBox::onPress(int x, int y, int button) {
 	//a click toggles focus state if we are off
 	if(!m_hasFocus) {
 		//expand the height for all choices
-		//      setSize(config->gridSize.x - config->padding.x, config->comboBoxHeight * m_choices.size());
+        //      setSize(config->gridSize.x - config->padding.x, config->comboBoxHeight * m_choices.size());
 		m_hasFocus = true;
 		//notify that we want to steal all events from the page
 		m_page->SetEventStealingControl(*this);
@@ -153,7 +153,7 @@ void ofxSimpleGuiComboBox::onDragOutside(int x, int y, int button){
 	onMouseMove(x,y);
 }
 
-bool ofxSimpleGuiComboBox::hitTest(int tx, int ty) {
+bool ofxSimpleGuiComboBox::hitTest(int tx, int ty) const {
 	if(!m_hasFocus) 
 		return ofxMSAInteractiveObject::hitTest(tx,ty);
 	

@@ -64,12 +64,12 @@ public:
 	//invalid index (default = -1) will remove the last choice in the combo box
 	void removeChoice(int index = -1);
 	
-	virtual void onPressOutside(int x, int y, int button);
-	virtual void onMouseMove(int x, int y);
-	virtual void onDragOver(int x, int y, int button);
-	virtual void onDragOutside(int x, int y, int button);
+    virtual void onPressOutside(int x, int y, int button) override;
+    virtual void onMouseMove(int x, int y) override;
+    virtual void onDragOver(int x, int y, int button) override;
+    virtual void onDragOutside(int x, int y, int button) override;
 	
-	virtual bool hitTest(int tx, int ty);
+    virtual bool hitTest(int tx, int ty) const override;
 	
 protected:
 	void setCBTextColor();
