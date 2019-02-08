@@ -23,7 +23,7 @@ public:
 	ofxSimpleGuiControl& setName(string newName);
 	ofxSimpleGuiControl& setKey(string newKey);
 	ofxSimpleGuiControl& setConfig(ofxSimpleGuiConfig *config);
-	ofxSimpleGuiControl& setNewColumn(bool b);
+    ofxSimpleGuiControl& setNewColumn(bool b=true);
 
 	ofxSimpleGuiControl& setTextColor(bool clickable = true);
 	ofxSimpleGuiControl& setTextBGColor(bool clickable = true);
