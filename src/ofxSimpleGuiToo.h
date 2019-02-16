@@ -57,8 +57,8 @@ public:
 	void						loadFromXML(string path = "");
 	void						saveToXML(string path = "");
 	void						setAutoSave(bool b);
-	void						setAlignRight(bool b);
-	void						setDefaultKeys(bool b);
+    void						setAlignRight(bool b=true);
+    void						setDefaultKeys(bool b=true);
 	
 	//	int		getValueI(string nameID);
 	//	float	getValueF(string nameID);
