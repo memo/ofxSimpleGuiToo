@@ -1,1 +1,3 @@
+ofxMSAInteractiveObject
+ofxXmlSettings
 ofxSimpleGuiToo

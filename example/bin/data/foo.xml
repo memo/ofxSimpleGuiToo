@@ -1,0 +1,18 @@
+<controls>
+    <SliderFloat_myFloat5>
+        <name>myFloat5</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat5>
+    <SliderFloat_myFloat6>
+        <name>myFloat6</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat6>
+    <SliderFloat_myFloat9>
+        <name>myFloat9</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat9>
+    <Toggle_myBool9>
+        <name>myBool9</name>
+        <value>0</value>
+    </Toggle_myBool9>
+</controls>

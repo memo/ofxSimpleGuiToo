@@ -1,0 +1,70 @@
+<controls>
+    <Toggle_myBool1_Animate>
+        <name>myBool1 Animate</name>
+        <value>0</value>
+    </Toggle_myBool1_Animate>
+    <SliderFloat_myFloat1>
+        <_noise></_noise>
+        <name>myFloat1: noise</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat1>
+    <SliderInt_myInt1>
+        <name>myInt1</name>
+        <value>0</value>
+    </SliderInt_myInt1>
+    <ComboBox_box1>
+        <name>box1</name>
+        <value>0</value>
+    </ComboBox_box1>
+    <Button_Randomize_Background>
+        <name>Randomize Background</name>
+        <value>1</value>
+    </Button_Randomize_Background>
+    <ColorPicker_BG_Color>
+        <name>BG Color</name>
+        <values_0>1.000000000</values_0>
+        <values_1>1.000000000</values_1>
+        <values_2>1.000000000</values_2>
+        <values_3>1.000000000</values_3>
+    </ColorPicker_BG_Color>
+    <SliderFloat_myFloat2>
+        <name>myFloat2</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat2>
+    <SliderInt_myInt2>
+        <name>myInt2</name>
+        <value>0</value>
+    </SliderInt_myInt2>
+    <Toggle_myBool2>
+        <name>myBool2</name>
+        <value>0</value>
+    </Toggle_myBool2>
+    <ComboBox_box2>
+        <name>box2</name>
+        <value>0</value>
+    </ComboBox_box2>
+    <Toggle_myBool4>
+        <name>myBool4</name>
+        <value>0</value>
+    </Toggle_myBool4>
+    <Toggle_myBool3>
+        <name>myBool3</name>
+        <value>0</value>
+    </Toggle_myBool3>
+    <SliderFloat_myFloat3>
+        <name>myFloat3</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat3>
+    <SliderFloat_myFloat4>
+        <name>myFloat4</name>
+        <value>0.000000000</value>
+    </SliderFloat_myFloat4>
+    <SliderInt_myInt6>
+        <name>myInt6</name>
+        <value>0</value>
+    </SliderInt_myInt6>
+    <SliderInt_myInt4>
+        <name>myInt4</name>
+        <value>0</value>
+    </SliderInt_myInt4>
+</controls>
